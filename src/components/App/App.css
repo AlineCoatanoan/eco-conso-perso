@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuration du body */
+body {
+  background-image: url('/fond.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Gaegu', sans-serif;
+  position: relative;
+  min-height: 100vh; /* Force la hauteur minimale à 100% de la vue */
+}
+
+/* Positionnement des images */
+body::after,
+body::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Flèche */
+body::after {
+  top: 70%;
+  left: 64%;
+  width: 500px;
+  height: 500px;
+  background-image: url('/fleche.png');
+  transform: translateY(-50%);
+}
+
+/* Ampoule */
+body::before {
+  top: 40%;
+  left: 0%;
+  width: 600px;
+  height: 600px;
+  background-image: url('/ampoule.png');
+  transform: translateY(-50%);
+}
+
+
+@media (max-width: 480px) {
+  /* Masque les images flèche et ampoule sur les petits écrans */
+  body::after,
+  body::before {
+    display: none;
+  }
+}
