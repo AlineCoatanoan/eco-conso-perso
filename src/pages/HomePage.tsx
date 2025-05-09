@@ -18,7 +18,6 @@ const HomePage = () => {
   });
 
   // État local pour stocker le résultat du calcul après soumission du formulaire
-  // Le type est soit null, soit l'objet retourné par calculateScore
   const [result, setResult] = useState<null | ReturnType<typeof calculateScore>>(null);
 
   // Référence vers le conteneur du graphique, utile pour générer un PDF ou capturer l’image (ex: html2canvas)
@@ -68,11 +67,11 @@ const HomePage = () => {
           <ScoreResult result={result} />
 
           {/* Espacement du graphique avec ref */}
-          <div className="mt-16 mb-8" ref={chartRef}>
+          <div className="mb-8" ref={chartRef}>
             <CO2Chart data={result.chartData} />
           </div>
 
-          <div className="!mt-20 !mb-2 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <ShareButton result={result} />
             <PDFExportButton result={result} chartRef={chartRef} />
           </div>

@@ -1,6 +1,5 @@
 // Composant pour afficher un graphique circulaire (pie chart) des émissions de CO2
 
-
 import { PieChart, Pie, Cell, Tooltip, Legend, LegendProps } from 'recharts';
 import { useState, useEffect } from 'react';
 
@@ -35,27 +34,27 @@ const CustomLegend = (props: LegendProps) => {
 const CO2Chart = ({ data }: Props) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
-  // Met à jour la largeur de la fenêtre à chaque redimensionnement
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-
-    // Nettoyage de l'événement à la destruction du composant
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Ajuste le `outerRadius` en fonction de la largeur de l'écran
   const outerRadius = windowWidth <= 640 ? 60 : 80;
+  const chartHeight = windowWidth <= 640 ? 360 : 320;
+  const pieCy = windowWidth <= 640 ? 90 : 140; // 🔼 Remonté ici
 
   return (
-    <div className="flex justify-center mt-12 mb-12 px-4 sm:px-8">
-      <div className="flex flex-col items-center space-y-8 w-full max-w-[500px] sm:max-w-[500px]">
-        <PieChart width={500} height={300}>
+    <div className="flex justify-center px-4 sm:px-8">
+      <div className="flex flex-col items-center space-y-4 w-full max-w-[500px]">
+        <PieChart width={500} height={chartHeight}>
           <Pie
             data={data}
             dataKey="value"
             nameKey="name"
-            outerRadius={outerRadius}  
+            outerRadius={outerRadius}
+            cx={250}
+            cy={pieCy}
             label={({ value }) => `${value} kg CO₂`}
           >
             {data.map((_, index) => (
@@ -73,5 +72,6 @@ const CO2Chart = ({ data }: Props) => {
     </div>
   );
 };
+
 
 export default CO2Chart;

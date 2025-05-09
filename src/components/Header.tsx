@@ -18,7 +18,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-center sm:justify-start relative">
         
         {/* Logo cliquable vers Home */}
-        <Link to="/" className="absolute left-0 sm:left-0 md:left-0 lg:left-80">
+        <Link to="/" className="absolute left-0 sm:left-0 md:left-0 lg:left-80 bottom-6 sm:bottom-0 md:bottom-2">
           <motion.img
             src="/home.png"
             alt="Logo de Eco-Conso-Perso"
@@ -32,13 +32,17 @@ const Header = () => {
               repeatType: 'loop',
               ease: 'easeInOut',
             }}
+            style={{
+              position: 'relative',
+              bottom: '18px', // Ajuste par défaut, ici pour version desktop
+            }}
           />
         </Link>
 
         {/* Titre, flèche et lien "À propos" décalés à droite sur grands écrans */}
         <div className="flex items-center space-x-4 sm:space-x-8 ml-auto sm:ml-auto md:ml-56 lg:ml-96">
           <Link to="/">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0D4729] drop-shadow-lg font-gaegu text-center sm:ml-4">
+            <h1 className="text-3xl sm:text-xl md:text-3xl lg:text-6xl font-extrabold tracking-tight text-[#0D4729] drop-shadow-lg font-gaegu text-center sm:ml-4">
               Eco-Conso-Perso
             </h1>
           </Link>
