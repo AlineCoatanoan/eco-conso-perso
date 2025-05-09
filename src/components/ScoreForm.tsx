@@ -1,3 +1,8 @@
+// Formulaire pour le calcul du score écologique
+// Avec des champs pour l'électricité, le gaz, l'eau, l'internet et le téléphone
+// Et inputs pour chaque champ avec des valeurs par défaut
+
+
 import React from 'react';
 
 type Props = {

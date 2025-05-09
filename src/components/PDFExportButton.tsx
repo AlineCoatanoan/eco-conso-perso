@@ -1,3 +1,6 @@
+// Contenu du fichier PDF exporté
+
+
 import React, { RefObject } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -15,7 +18,7 @@ type Result = {
 
 type Props = {
   result: Result;
-  chartRef: RefObject<HTMLDivElement | null>; // ← ici
+  chartRef: RefObject<HTMLDivElement | null>; 
 };
 
 
@@ -31,7 +34,7 @@ const PDFExportButton = ({ result, chartRef }: Props) => {
     // Centre le titre
     const title = 'éco-conso-perso';
     pdf.setFontSize(20);
-    pdf.setTextColor(0, 128, 0); // vert
+    pdf.setTextColor(0, 128, 0); // couleur titre vert
     const pageWidth = pdf.internal.pageSize.getWidth();
     const textWidth = pdf.getTextWidth(title);
     const x = (pageWidth - textWidth) / 2;
@@ -39,7 +42,7 @@ const PDFExportButton = ({ result, chartRef }: Props) => {
   
     // Infos en noir
     pdf.setFontSize(12);
-    pdf.setTextColor(0, 0, 0); // noir
+    pdf.setTextColor(0, 0, 0); // couleur info noir
     pdf.text(`Score : ${result.score}/100`, 10, 30);
     pdf.text(`Émissions : ${result.kgCO2} kg de CO₂/mois`, 10, 40);
     pdf.text(`Équivalent voiture : ${result.kmCar} km`, 10, 50);

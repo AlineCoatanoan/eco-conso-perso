@@ -80,5 +80,15 @@ pnpm dev
 
 ---
 
+### 🌱 Engagement environnemental
+
+Ce projet, axé sur la sensibilisation à l'impact carbone de nos usages numériques quotidiens, intègre une réflexion écologique jusque dans son mode d'hébergement.
+
+Le site est hébergé sur **Vercel**, une plateforme gratuite et optimisée pour les projets front-end. Bien que Vercel ne revendique pas directement un hébergement "vert", elle repose sur des infrastructures cloud telles qu'**AWS**, qui s'engage à alimenter ses centres de données à 100 % en énergies renouvelables d'ici 2025. De plus, le recours à un **CDN (Content Delivery Network)** réparti permet de minimiser les distances de chargement et donc la consommation énergétique côté utilisateur.
+
+✅ Ce choix d’hébergement allie **praticité**, **gratuité** et une certaine **sobriété numérique**, en cohérence avec l’objectif pédagogique et écologique du projet.
+
+---
+
 ## 📃 Licence
 MIT – Fais-en bon usage, partage l’outil et améliore-le !

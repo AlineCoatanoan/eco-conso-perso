@@ -1,3 +1,5 @@
+// composant permettant d'afficher le score de l'utilisateur
+
 type Result = {
   score: number;
   kgCO2: number;

@@ -8,6 +8,7 @@ import ShareButton from '../components/ShareButton';
 import PDFExportButton from '../components/PDFExportButton';
 
 const HomePage = () => {
+  // État local pour stocker les données du formulaire utilisateur
   const [formData, setFormData] = useState({
     electricity: '',
     gas: '',
@@ -16,21 +17,26 @@ const HomePage = () => {
     phone: '',
   });
 
+  // État local pour stocker le résultat du calcul après soumission du formulaire
+  // Le type est soit null, soit l'objet retourné par calculateScore
   const [result, setResult] = useState<null | ReturnType<typeof calculateScore>>(null);
 
-  const chartRef = useRef<HTMLDivElement>(null); // 🔥 Référence du graphe
+  // Référence vers le conteneur du graphique, utile pour générer un PDF ou capturer l’image (ex: html2canvas)
+  const chartRef = useRef<HTMLDivElement>(null);
 
+  // Fonction déclenchée à chaque modification dans un champ du formulaire
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+      ...formData, // On garde les autres champs inchangés
+      [e.target.name]: e.target.value, // On met à jour seulement le champ modifié
     });
   };
 
+  // Fonction déclenchée à la soumission du formulaire
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const calc = calculateScore(formData);
-    setResult(calc);
+    e.preventDefault(); // Empêche le rechargement de la page
+    const calc = calculateScore(formData); // Appel du calcul à partir des données saisies
+    setResult(calc); // Stocke le résultat dans le state pour affichage
   };
 
   return (

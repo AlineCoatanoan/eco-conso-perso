@@ -1,3 +1,5 @@
+// Composant permettant de partager le score éco conso
+
 type Result = {
     score: number;
     kgCO2: number;

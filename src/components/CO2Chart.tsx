@@ -1,3 +1,6 @@
+// Composant pour afficher un graphique circulaire (pie chart) des émissions de CO2
+
+
 import { PieChart, Pie, Cell, Tooltip, Legend, LegendProps } from 'recharts';
 import { useState, useEffect } from 'react';
 
