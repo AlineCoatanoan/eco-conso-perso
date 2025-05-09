@@ -80,7 +80,7 @@ Basée sur les données officielles de l'**ADEME** (Base Carbone v23.0) :
 
 ---
 
-### 🌱 Engagement environnemental
+## 🌱 Engagement environnemental
 
 Ce projet, axé sur la sensibilisation à l'impact carbone de nos usages numériques quotidiens, intègre une réflexion écologique jusque dans son mode d'hébergement.
 
