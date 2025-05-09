@@ -73,10 +73,10 @@ Basée sur les données officielles de l'**ADEME** (Base Carbone v23.0) :
 ## 🛠️ Installation locale
 
 
-git clone https://github.com/ton-pseudo/eco-conso-perso.git
-cd eco-conso-perso
-pnpm install
-pnpm dev
+✨ git clone https://github.com/ton-pseudo/eco-conso-perso.git
+✨ cd eco-conso-perso
+✨ pnpm install
+✨ pnpm dev
 
 ---
 
