@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# ♻️ Eco-Conso-Perso
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Eco-Conso-Perso** est une application web qui permet à chacun d'estimer l'empreinte carbone mensuelle de son logement, et de la convertir en équivalent kilomètres en voiture.  
+L'objectif ? Sensibiliser à l'impact environnemental de notre quotidien de manière simple, visuelle et partageable.
 
-Currently, two official plugins are available:
+## 🚀 Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🧮 **Calcul du score environnemental** (sur 100)
+- 📊 **Répartition des postes de consommation** via un graphique interactif
+- 🚗 **Équivalent CO₂ en kilomètres voiture**
+- 📄 **Export PDF** des résultats (via jsPDF + html2canvas)
+- 📤 **Partage facile** du score avec bouton de copie
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Technologies utilisées
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+| Technologie                | Rôle                           |
+|----------------------------|--------------------------------|
+| React 19                   | Framework principal            |
+| Vite                       | Build ultra-rapide             |
+| Tailwind CSS               | Style responsive & moderne     |
+| Framer Motion              | Animations fluides             |
+| Recharts                   | Graphiques interactifs         |
+| jsPDF & html2canvas        | Export en PDF                  |
+| React Circular Progressbar | Indicateur circulaire de score |
+| React Router DOM 7         | Navigation SPA                 |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🤖 Aide à la rédaction
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Certaines parties de ce projet, y compris ce README, ont été rédigées ou assistées à l’aide de l’intelligence artificielle (ChatGPT d’OpenAI) pour gagner du temps, structurer les idées et améliorer la clarté de la présentation. (j'adore ses icônes dans sa rédaction du READ ME^^)
+
+---
+
+## 🧾 Méthodologie de calcul
+
+Basée sur les données officielles de l'**ADEME** (Base Carbone v23.0) :
+
+| Poste       | Unité saisie     | Émission CO₂ (kg) |
+|-------------|------------------|-------------------|
+| Électricité | kWh/mois         | 1 kWh = 0.06 kg   |
+| Gaz naturel | kWh/mois         | 1 kWh = 0.234 kg  |
+| Eau potable | L/mois           | 1 L = 0.00018 kg  |
+| Internet    | Heures/jour      | 1h = 0.15 kg/jour |
+| Téléphone   | Heures/jour      | 1h = 0.17 kg/jour |
+
+👉 Le total des kg de CO₂ est converti en **kilomètres voiture** :  
+**1 km = 0.2 kg de CO₂**
+
+---
+
+## 🎯 Exemple de résultat
+
+> Votre logement émet environ **52.3 kg de CO₂/mois**, soit l'équivalent d’un trajet en voiture de **261 km**.  
+
+✨ Score global : **78/100**  
+📉 Répartition visible via un graphique  
+📄 Téléchargement PDF possible  
+📤 Partageable via un simple clic
+
+---
+
+## 📜 Sources
+
+📄 ADEME – Base Carbone v23.0
+📄 EcoInfo – CNRS
+📄 Data conversion CO₂ ↔ km voiture
+
+---
+
+## 🛠️ Installation locale
+
+
+git clone https://github.com/ton-pseudo/eco-conso-perso.git
+cd eco-conso-perso
+pnpm install
+pnpm dev
+
+---
+
+## 📃 Licence
+MIT – Fais-en bon usage, partage l’outil et améliore-le !
