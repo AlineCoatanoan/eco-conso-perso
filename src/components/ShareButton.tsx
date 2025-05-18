@@ -1,12 +1,12 @@
 // Composant permettant de partager le score éco conso
 
-type Result = {
+interface Result {
     score: number;
     kgCO2: number;
     kmCar: number;
   };
   
-  type Props = {
+  interface Props {
     result: Result;
   };
   

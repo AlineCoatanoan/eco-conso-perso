@@ -5,7 +5,7 @@ import React, { RefObject } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-type Result = {
+interface Result {
   score: number;
   kgCO2: number;
   kmCar: number;
@@ -16,7 +16,7 @@ type Result = {
   }[];
 };
 
-type Props = {
+interface Props {
   result: Result;
   chartRef: RefObject<HTMLDivElement | null>; 
 };

@@ -5,7 +5,7 @@
 // - ADEME : https://www.ademe.fr/particuliers-eco-citoyens/consommer-autrement/eco-conso/eco-conso-1-0
 // - CNRS EcoInfo : https://ecoinfo.cnrs.fr
 
-type FormData = {
+interface FormData {
   electricity: string; // en kWh/mois
   gas: string;         // en kWh/mois
   water: string;       // en litres/mois

@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-type Props = {
+interface Props {
   formData: {
     electricity: string;
     gas: string;

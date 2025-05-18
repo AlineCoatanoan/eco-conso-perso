@@ -1,13 +1,13 @@
 import { CircularProgressbar } from 'react-circular-progressbar'; // Import du composant
 import 'react-circular-progressbar/dist/styles.css'; // Import des styles nécessaires
 
-type Result = {
+interface Result {
   score: number;
   kgCO2: number;
   kmCar: number;
 };
 
-type Props = {
+interface Props {
   result: Result;
 };
 

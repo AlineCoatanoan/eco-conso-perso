@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react';
 
 const COLORS = ['#22c55e', '#facc15', '#3b82f6', '#0d4729', '#f97316'];
 
-type DataItem = {
+interface DataItem {
   name: string;
   value: number;
 };
 
-type Props = {
+interface Props {
   data: DataItem[];
 };
 
